@@ -63,7 +63,7 @@ def youdao(text):
 
 # -------------------------------------------------------
 
-def get_cmdargs():
+def get_cmd_args():
     text_list = sys.argv[1:]
     text_len = len(text_list)
     if text_len == 0:
@@ -78,7 +78,7 @@ def get_cmdargs():
 
 
 if __name__ == '__main__':
-    cmdargs = get_cmdargs()
+    cmdargs = get_cmd_args()
     text = ''
     if cmdargs[0] == 0:
         for i in sys.stdin:
