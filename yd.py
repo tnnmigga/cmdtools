@@ -8,6 +8,7 @@ import sys
 
 # -------------------------------------------------------
 
+
 def encrypt(signStr):
     hash_algorithm = hashlib.sha256()
     hash_algorithm.update(signStr.encode('utf-8'))
@@ -43,7 +44,7 @@ def youdao(text):
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
     req = urllib.request.Request(url=url, data=data, headers=headers)
     try:
-        response = urllib.request.urlopen(url=req,timeout=5)
+        response = urllib.request.urlopen(url=req, timeout=5)
     except:
         return "好像网不行~"
     html = response.read().decode('utf-8')
@@ -82,7 +83,7 @@ if __name__ == '__main__':
     text = ''
     if cmdargs[0] == 0:
         for i in sys.stdin:
-            text+=i
+            text += i
     else:
         text = cmdargs[1]
     res = youdao(text)

@@ -1,6 +1,7 @@
 import os
 import sys
 
+
 def get_cmd_args():
     args = sys.argv[1:]
     argsCount = len(args)
@@ -14,18 +15,19 @@ def get_cmd_args():
             text += ' '+args[i]
         return (argsCount, text)
 
-if __name__=='__main__':
-    args=get_cmd_args()
-    if args[0]!=0:
-        if args[1]=='open':
+
+if __name__ == '__main__':
+    args = get_cmd_args()
+    if args[0] != 0:
+        if args[1] == 'open':
             os.system("git config --global http.proxy socks5://127.0.0.1:1080")
             os.system("git config --global https.proxy socks5://127.0.0.1:1080")
-            print("开启了代理~")
-        elif args[1]=='close':
+            print("Open success")
+        elif args[1] == 'close':
             os.system("git config --global --unset http.proxy")
             os.system("git config --global --unset https.proxy")
-            print("关闭了代理~")
+            print("Close success")
         else:
-            print("指令输错了~")
+            print("Invalid command")
     else:
-        print("指令输错了~")
+        print("Invalid command")
